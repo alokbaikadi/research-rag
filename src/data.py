@@ -76,10 +76,10 @@ class PDFDocumentStore(DocumentStore):
 
 
 if __name__ == "__main__":
-    BASE_PATH = Path("../data")
+    load_dotenv()
+    BASE_PATH = Path(os.getenv("DATA_DIR"))
     DEFAULT_COLLECTION = Path("publications")
 
-    load_dotenv()
     EMBEDDING_MODEL=os.getenv("EMBEDDING_MODEL")
     PERSIST_DIRECTORY=os.getenv("PERSIST_DIRECTORY")
 
