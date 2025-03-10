@@ -83,13 +83,6 @@ if __name__ == "__main__":
     EMBEDDING_MODEL=os.getenv("EMBEDDING_MODEL")
     PERSIST_DIRECTORY=os.getenv("PERSIST_DIRECTORY")
 
-    #docs = find_documents(BASE_PATH, collection=DEFAULT_COLLECTION)
-    #chunks = split_documents(docs)
-    #print(f"Processed {len(docs)} into {len(chunks)} chunks")
-
-    #vector_store = init_vectorstore(EMBEDDING_MODEL, PERSIST_DIRECTORY, OLLAMA_HOST)
-    #store_documents(chunks, vector_store, "My Documents")
-
     store = PDFDocumentStore(EMBEDDING_MODEL, PERSIST_DIRECTORY)
     pdfs = PDFDocumentStore.find_pdfs(BASE_PATH, DEFAULT_COLLECTION)
     store.load(pdfs)
