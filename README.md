@@ -20,9 +20,7 @@ These can be set via a .env file for convenience.
 
 The `LLM_MODEL` and `EMBEDDING_MODEL` must be pulled and ready within ollama.
 
-The data processing can be run via `python data.py`
-A single question chat interaction can be run via `python client.py`
-
+A threaded interactive chat session can be started with `python main.py`
 
 ## Docker
 The provided docker file in `docker/Dockerfile` can be used to build an image which contains the dependencies for the project.
